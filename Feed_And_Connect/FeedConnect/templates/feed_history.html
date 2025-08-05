@@ -7,43 +7,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="{% static 'assets/js/landing.js' %}" defer></script>
     <style>
-            body {
-                background-image: url("{% static 'images/resources/catfong.jpg' %}");
-                color: #ffffff;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                min-height: 100vh;
-                margin: 0;
-            }
-            .btn-style {
-                display: inline-block;
-                padding: 6px 10px;
-                background: white;
-                color: #000; /* your blue */
-                font-weight: bold;
-                border-radius: 7px;
-                text-decoration: none;
-                cursor: pointer;
-                text-transform: uppercase;
-                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-                border: none;
-                transform: skew(-25deg);
-                transition: all 0.3s ease;
-                margin-left: 10px;
-            }
+           body {
+            background-color: #c0ccd8;
+            color: #1a1a1a;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .btn-style {
+            display: inline-block;
+            padding: 6px 10px;
+            background: #5fb3c0;
+            color: #1C3347;
+            font-weight: bold;
+            border-radius: 7px;
+            text-decoration: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+            border: none;
+            transform: skew(-25deg);
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+        .btn-style span {
+            display: block;
+            transform: skew(25deg);
+            color: inherit;
+        }
+        .btn-style:hover {
+            background: #4b94a6;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-            .btn-style span {
-                display: block;
-                transform: skew(25deg);
-                color: inherit;
-            }
-
-            .btn-style:hover {
-                background: #eee;
-                color: #495057;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-            }
             bmi {
                 display: none; /* Hide by default, can be toggled via JS */
             }
@@ -53,11 +49,11 @@
             }
 
             .bmi-calculator {
-                background-color: #ffffffcc;
+                background-color: #9276B8;
                 padding: 30px;
                 border-radius: 12px;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-                color: gray;
+                color: #1C3347;
                 width: 100%;
                 max-width: 600px;
                 margin: 0 auto;
@@ -67,29 +63,25 @@
                 text-align: center;
                 margin-bottom: 20px;
                 font-size: 24px;
+                color: #1C3347;
             }
 
             .form-group {
                 margin-bottom: 20px;
                 display: flex;
                 flex-direction: column;
-        
             }
 
             .form-group label {
                 margin-bottom: 8px;
                 font-size: 14px;
-            }
-
-            .bmi-calculator {
-                background-color: rgba(0, 0, 0, 0.8); /* dark transparent background */
-                color: white;
+                color: #1C3347;
             }
 
             .bmi-calculator input[type="number"],
             .bmi-calculator select {
-                background-color: rgba(128, 128, 128, 0.5) !important;
-                color: white !important;
+                background-color: #BFADE0 !important;
+                color: #1C3347 !important;
                 border: none;
                 border-radius: 6px;
                 padding: 8px;
@@ -97,9 +89,10 @@
                 width: 100%;
             }
 
+
             .bmi-calculator button {
-                background-color: rgba(128, 128, 128, 0.5) !important;
-                color: white !important;
+                background-color: #A892D2 !important;
+                color: #1C3347 !important;
                 border: none;
                 border-radius: 6px;
                 padding: 10px 15px;
@@ -109,37 +102,38 @@
             }
 
             .bmi-calculator button:hover {
-                background-color: rgba(128, 128, 128, 0.7) !important;
+                background-color: #8E69C2 !important;
             }
 
             .bmi-calculator select option {
-                color: black !important;
-                background-color: white !important;
-            }
-
-            .bmi-calculator select option {
-                background-color: #444 !important; /* dark gray */
-                color: white !important;
+                background-color: #BFADE0 !important;
+                color: #1C3347 !important;
             }
 
             result,
             food-recommendation {
                 margin-top: 20px;
                 font-size: 16px;
+                color: #1C3347;
             }
 
+            /* Placeholder text */
             .bmi-calculator input::-webkit-input-placeholder {
-                color: rgba(255, 255, 255, 0.8);
+                color: #1C3347;
             }
             .bmi-calculator input:-moz-placeholder {
-                color: rgba(255, 255, 255, 0.8);
+                color: #1C3347;
             }
             .bmi-calculator input::-moz-placeholder {
-                color: rgba(255, 255, 255, 0.8);
+                color: #1C3347;
             }
             .bmi-calculator input:-ms-input-placeholder {
-                color: rgba(255, 255, 255, 0.8);
+                color: #1C3347;
             }
+
+             h2 {
+            color: #1C3347 !important;
+        }
 
 
             

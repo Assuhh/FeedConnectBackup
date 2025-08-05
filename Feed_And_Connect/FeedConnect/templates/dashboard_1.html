@@ -8,19 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
-            background-image: url("{% static 'images/resources/pusakal.jpg' %}");
-            color: #ffffff;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            background-color: #c0ccd8;
+            color: #1a1a1a;
             min-height: 100vh;
             margin: 0;
         }
         .btn-style {
             display: inline-block;
             padding: 6px 10px;
-            background: white;
-            color: #000;
+            background: #5fb3c0;
+            color: #1C3347;
             font-weight: bold;
             border-radius: 7px;
             text-decoration: none;
@@ -38,48 +35,49 @@
             color: inherit;
         }
         .btn-style:hover {
-            background: #eee;
-            color: #495057;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            background: #4b94a6;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .slider {
             width: 100%;
         }
         .feed-button {
-    width: 100%;
-    background-color: #6c757d;
-    border: none;
-    padding: 20px; /* increased from 15px */
-    font-size: 22px; /* increased from 18px */
-    font-weight: bold;
-    color: white;
-    border-radius: 12px; /* slightly rounder */
-    transition: all 0.3s ease;
-}
+            width: 100%;
+            background-color: #d9e3e8;
+            border: 1px solid #bccbd0;
+            padding: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #1a1a1a;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
         .feed-button:hover {
-            background-color: #8f969d;
+            background-color: #c9d9de;
             transform: translateY(-2px);
         }
         .feed-button:disabled {
-            background-color: #666;
+            background-color: #b6c4cb;
             cursor: not-allowed;
         }
         .status-card {
-            background-color: rgba(30, 30, 30, 0.8);
-            border: 1px solid #333;
+            background-color: #e6e2f0;
+            border: 1px solid #c8d0db;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
             text-align: center;
+            color: #1a1a1a;
         }
         .next-feeding {
             font-size: 1.2em;
-            color: #00C853;
+            color: #1aa6ae;
             font-weight: bold;
         }
         .schedule-count {
-            color: #ffc107;
+            color: #5e3d66;
         }
         .toggle-switch {
             position: relative;
@@ -112,36 +110,46 @@
             border-radius: 50%;
         }
         input:checked + .slider-round {
-            background-color: #00C853;
+            background-color: #5fb3c0;
         }
         input:checked + .slider-round:before {
             transform: translateX(26px);
         }
         .form-control {
-            background-color: #2d2d2d;
-            border: 1px solid #444;
-            color: #ffffff;
+            background-color: #dfe9ed;
+            border: 1px solid #b6c3c7;
+            color: #1a1a1a;
         }
         .form-control:focus {
-            background-color: #2d2d2d;
-            border-color: #fff;
-            color: #ffffff;
-            box-shadow: 0 0 0 0.2rem rgba(122, 122, 122, 0.3);
+            background-color: #ffffff;
+            border-color: #5fb3c0;
+            color: #1a1a1a;
+            box-shadow: 0 0 0 0.2rem rgba(95, 179, 192, 0.3);
         }
         .save-button {
-        background: linear-gradient(45deg,  #7a7a7a, #b0b0b0); /* smooth, stylish gray gradient */
-        border: none;
-        color: white;
-        font-weight: bold;
-        transition: all 0.3s ease;
+            background: linear-gradient(45deg, #5fb3c0, #a69fd0);
+            border: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
-
         .save-button:hover {
-        background: linear-gradient(45deg,  #b0b0b0, #969696); /* reversed on hover for effect */
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(122, 122, 122, 0.3); /* soft shadow */
+            background: linear-gradient(45deg, #a69fd0, #5fb3c0);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(95, 179, 192, 0.3);
         }
-
+        .text-purple {
+            color: #9276B8 !important;
+        }
+        .status-card h4 {
+            color: #9276B8 !important;
+        }
+        h5 {
+            color: #9276B8 !important;
+        }
+        h2 {
+            color: #1C3347 !important;
+        }
     </style>
 </head>
 <body>
@@ -186,7 +194,7 @@
                 {% endif %}
             </div>
 
-                <small class="text-white">
+                <small class="text-purple">
                     {% if schedule_active %}
                         Schedule is ON
                     {% else %}
@@ -199,7 +207,7 @@
             <div class="status-card">
                 <h5>Active Schedules</h5>
                 <div class="schedule-count" id="scheduleCount">{{ schedule_count }}</div>
-                <small class="text-white">
+                <small class="text-purple">
                 {% if schedule_count == 1 %}
                     feeding time set
                 {% else %}
@@ -229,7 +237,7 @@
         class="form-range slider"
     >
 
-    <div class="d-flex justify-content-between text-small text-white mt-1">
+    <div class="d-flex justify-content-between text-small text-purple mt-1">
         <span>10g</span>
         <span>500g</span>
     </div>
@@ -256,7 +264,7 @@
                         {% if schedule_active %}checked{% endif %} onchange="updateScheduleStatus()">
                     <span class="slider-round"></span>
                 </label>
-                <div class="small text-white mt-2">
+                <div class="small text-purple mt-2">
                     Toggle to enable/disable automatic feeding</div>
             </div>
 
@@ -274,7 +282,7 @@
             </div>
 
            <div class="mb-3" id="schedulePreview">
-                <small class="text-white">
+                <small class="text-purple">
                     <strong>Preview:</strong> <span id="previewText">
                         Set times above to see schedule
                     </span>

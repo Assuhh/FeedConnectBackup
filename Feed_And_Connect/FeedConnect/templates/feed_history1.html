@@ -7,21 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
-            background-image: url("{% static 'images/resources/fongfong.jpg' %}");
-            color: #ffffff;
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
+            background-color: #c0ccd8;
+            color: #1a1a1a;
             min-height: 100vh;
             margin: 0;
         }
-
         .btn-style {
             display: inline-block;
             padding: 6px 10px;
-            background: white;
-            color: #000; /* your blue */
+            background: #5fb3c0;
+            color: #1C3347;
             font-weight: bold;
             border-radius: 7px;
             text-decoration: none;
@@ -33,17 +28,20 @@
             transition: all 0.3s ease;
             margin-left: 10px;
         }
-
         .btn-style span {
             display: block;
             transform: skew(25deg);
             color: inherit;
         }
-
         .btn-style:hover {
-            background: #eee;
-            color: #495057;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            background: #4b94a6;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+
+        .slider {
+            width: 100%;
         }
 
         #scrollTopBtn {
@@ -88,19 +86,22 @@
         }
 
         .table-header {
-            background-color: rgba(0, 0, 0, 0.6);
-            font-weight: bold;
-            color: white;
-            padding: 10px 0;
-        }
+    background-color: #9276B8; /* purple background */
+    font-weight: bold;
+    color: white; /* white text for contrast */
+    padding: 10px 0;
+}
 
-        .table-row.odd {
-            background-color: rgba(30, 30, 30, 0.85);
-        }
+.table-row.odd {
+    background-color: #BFADE0; /* lighter purple */
+    color: #1C3347; /* text */
+}
 
-        .table-row.even {
-            background-color: rgba(20, 20, 20, 0.85);
-        }
+.table-row.even {
+    background-color: #A892D2; /* medium-light purple */
+    color: #1C3347; /* text */
+}
+
 
         .table-cell {
             flex: 1;
@@ -126,6 +127,10 @@
             font-size: 0.75rem;    /* smaller font size */
             margin-left: 6px;      /* slightly tighter spacing */
             }
+
+         h2 {
+            color: #1C3347 !important;
+        }
 
     </style>
 </head>
